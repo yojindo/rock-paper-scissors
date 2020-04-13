@@ -38,9 +38,13 @@ const win = (userChoice, computerChoice) => {
     userChoice_div.classList.add('green-glow')
     setTimeout( () => userChoice_div.classList.remove('green-glow'), 300)
     if(userScore === 5) {
-        message_id.innerHTML = 'You won the game! Select rock, paper, or scissors to play again!'
+        message_id.innerHTML = 'You won the game! Try again in 5 seconds!'
         userScore = 0;
         computerScore = 0;
+        rock_div.style.pointerEvents='none'
+        scissors_div.style.pointerEvents='none'
+        paper_div.style.pointerEvents='none'
+        setTimeout(() => window.location.reload(),5000)
         }
 }
 
@@ -55,9 +59,13 @@ const lose = (userChoice, computerChoice) => {
     userChoice_div.classList.add('red-glow')
     setTimeout( () => userChoice_div.classList.remove('red-glow'), 300)
     if(computerScore === 5) {
-        message_id.innerHTML = 'You lost the game! Select rock, paper, or scissors to play again!'
+        message_id.innerHTML = 'You lost the game! Try again in 5 seconds!'
         userScore = 0;
         computerScore = 0;
+        rock_div.style.pointerEvents='none'
+        scissors_div.style.pointerEvents='none'
+        paper_div.style.pointerEvents='none'
+        setTimeout(() => window.location.reload(),5000)
         }
 }
 
